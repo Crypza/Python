@@ -14,15 +14,19 @@ elif operator == "-":
 elif operator == "*":
     result = num1 * num2
 elif operator == "/":
-    if num1 == 0:
-        print("You cant divide by 0")
-        exit("Bye bye")
-    elif num2 == 0:
-        print("You cant divide by 0")
-        exit("Bye bye")
-    else:
+    try:
         result = num1 / num2
-#    result = num1 / num2
+    except ZeroDivisionError:
+        exit("You cant divide by 0")
+
+   # if num1 == 0:
+    #    print("You cant divide by 0")
+    #   exit("Bye bye")
+    #elif num2 == 0:
+    #    print("You cant divide by 0")
+    #    exit("Bye bye")
+    #else:
+    #    result = num1 / num2
 else:
     print("Error: not acceptable way of calculating")
     exit()
